@@ -1,24 +1,21 @@
 import { motion } from "framer-motion";
-import React, { useState } from 'react';
-import LOGO from "../../images/LOGO.png";
-import photo9 from "../../images/photo9.png";
-import { MdOutlineHome } from "react-icons/md";
-import { MdOutlinePhone } from "react-icons/md";
-import { MdOutlineMarkEmailRead } from "react-icons/md";
-import { Button } from "@material-tailwind/react";
-import { IoIosSend } from "react-icons/io";
-import emailjs from 'emailjs-com';
+import React from "react";
 
-// Define variants for animation effects
 const variants = {
   hidden: { opacity: 0, y: 50 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
   hover: { scale: 1.05, transition: { duration: 0.3 } },
 };
 
-
 export function Team() {
   const items = [
+    {
+      icon: "./src/assets/images/phone.png",
+      title: "Téléphone",
+      text: "Notre équipe est disponible par téléphone & WhatsApp.",
+      link: "tel:+212700223744",
+      linkText: "+212 7 00 22 37 44",
+    },
     {
       icon: "./src/assets/images/message.png",
       title: "Email",
@@ -40,44 +37,11 @@ export function Team() {
     },
   ];
 
-  // Separate phone item
-  const phoneItem = {
-    icon: "./src/assets/images/phone.png",
-    title: "Téléphone",
-    text: "Notre équipe est disponible par téléphone & WhatsApp.",
-    link: "tel:+212700223744",
-    linkText: "+212 7 00 22 37 44",
-  };
-
   return (
     <div className="bg-bg min-h-screen p-8">
-      <div className="px-4 md:px-0 mt-4 ml-6 mr-6 bg-bg">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 bg-bg">
-        <motion.div
-            initial="hidden"
-            whileInView="visible"
-            whileHover="hover"
-            viewport={{ once: true }}
-            variants={variants}
-            className="bg-bg rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-300"
-          >
-            <div className="flex items-center mb-4">
-              <img src={phoneItem.icon} alt={phoneItem.title} className="h-10 w-10" />
-              <h3 className="text-xl font-semibold ml-3">{phoneItem.title}</h3>
-            </div>
-            <p className="text-gray-600 mb-6 whitespace-pre-line">{phoneItem.text}</p>
-            <div className="flex items-center  mt-12">
-              <a
-                href={phoneItem.link}
-                className="text-blue-500 hover:underline font-medium"
-              >
-                {phoneItem.linkText}
-              </a>
-            </div>
-          </motion.div>
-          {/* Render non-phone items */}
+      <div className="px-4 md:px-0 mt-4 ml-6 mr-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
           {items.map((item, index) => (
-            
             <motion.div
               key={index}
               initial="hidden"
@@ -85,25 +49,22 @@ export function Team() {
               whileHover="hover"
               viewport={{ once: true }}
               variants={variants}
-              className="bg-bg rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-300"
+              className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-300"
             >
               <div className="flex items-center mb-4">
                 <img src={item.icon} alt={item.title} className="h-10 w-10" />
                 <h3 className="text-xl font-semibold ml-3">{item.title}</h3>
               </div>
-              <p className="text-gray-600 mb-6 whitespace-pre-line">{item.text}</p>
+              <p className="text-gray-600 dark:text-gray-300 mb-6 whitespace-pre-line">
+                {item.text}
+              </p>
               {item.link && (
-                <a
-                  href={item.link}
-                  className="text-blue-500 hover:underline font-medium "
-                >
+                <a href={item.link} className="text-blue-500 hover:underline font-medium">
                   {item.linkText}
                 </a>
               )}
             </motion.div>
           ))}
-
-          
         </div>
       </div>
     </div>

@@ -42,7 +42,7 @@ import {
          title: "Développeuse Full Stack",
      },
      {
-          img: "./src/assets/images/test.jpg",
+          img: "./src/assets/images/salma.jpg",
           name: "Salma Samiri",
           title: "Responsable des Ventes",
       },

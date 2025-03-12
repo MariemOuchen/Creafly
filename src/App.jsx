@@ -10,6 +10,7 @@ import Services from './pages/Services'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import SubLayout from './pages/SubLayout'
 import './App.css';
+import Secrets from './pages/Secrets'
 function App() {
 
      return (
@@ -21,6 +22,7 @@ function App() {
                               <Route path="about" element={<About />} />
                               <Route path="devis" element={<Devis />} />
                               <Route path="services" element={<Services />} />
+                              <Route path="secrets" element={<Secrets />} />
                          </Route>
                     </Route>
                </Routes>

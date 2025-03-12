@@ -26,7 +26,7 @@ const slides = [
 
 const slideVariants = {
   hidden: { opacity: 0, y: 50 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } }
+  visible: { opacity: 1, y: 0, transition: { duration: 0.9, ease: "easeOut" } }
 };
 
 const Hero = () => {
@@ -36,42 +36,47 @@ const Hero = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slides.length);
-    }, 3000); // 3 seconds
+    }, 2000); // 2 seconds
 
     return () => clearInterval(interval);
   }, []);
 
   return (
-    <Carousel className="h-[90vh]" index={currentSlide}>
-      {slides.map((slide, index) => (
-        <div key={index} className="relative h-full w-full">
-          <img src={slide.img} alt={`image ${index + 1}`} className="h-full w-full object-cover" />
-          <div className="absolute inset-0 grid h-full w-full place-items-center bg-black/75">
-            <motion.div 
-              className="w-3/4 text-center md:w-2/4"
-              initial="hidden"
-              animate="visible"
-              variants={slideVariants}
-            >
-              <Typography variant="h1" color="white" className="mb-4 text-xl md:text-4xl lg:text-5xl">
-                {slide.title}
-              </Typography>
-              <Typography variant="lead" color="white" className="text-sm md:text-xl mb-12 opacity-80 whitespace-pre-line">
-                {slide.desc}
-              </Typography>
-              <div className="flex justify-center gap-2">
-                <a href="/devis">
-                  <Button className="flex items-center gap-3" color='white' size='lg'>
-                    CONTACTEZ-NOUS
-                    <FaArrowRight />
-                  </Button>
-                </a>
-              </div>
-            </motion.div>
+    <div className="relative h-[90vh]">
+      <div className="absolute inset-0">
+        {slides.map((slide, index) => (
+          <div 
+            key={index} 
+            className={`absolute top-0 left-0 w-full h-full transition-all duration-1000 ${currentSlide === index ? 'opacity-100' : 'opacity-0'}`}
+          >
+            <img src={slide.img} alt={`image ${index + 1}`} className="h-full w-full object-cover" />
+            <div className="absolute inset-0 grid h-full w-full place-items-center bg-black/75">
+              <motion.div 
+                className="w-3/4 text-center md:w-2/4"
+                initial="hidden"
+                animate="visible"
+                variants={slideVariants}
+              >
+                <Typography variant="h1" color="white" className="mb-4 text-xl md:text-4xl lg:text-5xl">
+                  {slide.title}
+                </Typography>
+                <Typography variant="lead" color="white" className="text-sm md:text-xl mb-12 opacity-80 whitespace-pre-line">
+                  {slide.desc}
+                </Typography>
+                <div className="flex justify-center gap-2">
+                  <a href="/devis">
+                    <Button className="flex items-center gap-3" color='white' size='lg'>
+                      CONTACTEZ-NOUS
+                      <FaArrowRight />
+                    </Button>
+                  </a>
+                </div>
+              </motion.div>
+            </div>
           </div>
-        </div>
-      ))}
-    </Carousel>
+        ))}
+      </div>
+    </div>
   );
 }
 

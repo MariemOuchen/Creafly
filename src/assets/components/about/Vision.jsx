@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import Img7 from "../../images/photo7.png";
-import Img8 from "../../images/photo8.png";
+import Img7 from "../../images/vision.png";
+import Img8 from "../../images/mission.png";
 
 // Variants for reusable animations
 const fadeUp = {
@@ -34,7 +34,7 @@ const Vision = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ amount: 0.2 }}
-          className="mx-auto max-w-7xl px-10 py-16"
+          className="mx-auto max-w-7xl px-10 py-16 "
         >
           <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-2">
             {/* Content Div */}
@@ -49,7 +49,7 @@ const Vision = () => {
             </motion.div>
             {/* Image Div */}
             <motion.div variants={scaleIn} initial="hidden" whileInView="visible" viewport={{ amount: 0.2 }}>
-              <img src={Img7} className="rounded-md" alt="Vision" />
+              <img src={Img7} className="rounded-md h-45 w-45" alt="Vision" />
             </motion.div>
           </div>
         </motion.div>
@@ -65,7 +65,7 @@ const Vision = () => {
           <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-2">
             {/* Image Div */}
             <motion.div variants={scaleIn} initial="hidden" whileInView="visible" viewport={{ amount: 0.2 }}>
-              <img src={Img8} className="rounded-md" alt="Mission" />
+              <img src={Img8} className="rounded-md h-45 w-45" alt="Mission" />
             </motion.div>
             {/* Content Div */}
             <motion.div variants={slideRight} initial="hidden" whileInView="visible" viewport={{ amount: 0.2 }} className="max-w-[720px]">

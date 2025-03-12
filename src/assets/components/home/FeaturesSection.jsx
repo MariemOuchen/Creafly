@@ -39,7 +39,7 @@ const FeaturesSection = () => {
                                 alt={feature.alt}
                                 className="w-24 h-24 mb-4"
                             />
-                            <h2 className="text-2xl font-semibold bg-gradient-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text mb-2">
+                            <h2 className="text-2xl font-semibold bg-gradient-to-r text-gray-800  bg-clip-text mb-2">
                                 {feature.title}
                             </h2>
 
