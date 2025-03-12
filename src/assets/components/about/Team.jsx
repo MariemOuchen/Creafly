@@ -47,7 +47,7 @@ import {
           title: "Responsable des Ventes",
       },
      {
-         img: "./src/assets/images/omaimaa.jpg",
+         img: "./src/assets/images/oumaima.jpg",
          name: "Oumaima El-Kebda",
          title: "Créatrice de Contenu",
      },
