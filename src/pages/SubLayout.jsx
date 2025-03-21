@@ -10,14 +10,17 @@ const SubLayout = () => {
      useEffect(() => {
           switch(location.pathname) {
                case "/about":
-                    setTitle("À PROPOS DE NOUS");
+                    setTitle("Qui Sommes-nous?");
                     break
                case "/devis":
-                    setTitle("Voici comment vous pouvez nous contacter :");
+                    setTitle("Voici comment vous pouvez nous contacter");
                     break
                case "/services":
-                    setTitle("SERVICES");
+                    setTitle("Services");
                     break
+               case "/secrets":
+                         setTitle("Les Secrets Essentiels pour une Stratégie de Marketing Digital Performante");
+                         break
                default:
                     setTitle("")
 

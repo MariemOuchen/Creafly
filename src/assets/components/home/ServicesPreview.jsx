@@ -58,7 +58,7 @@ const Testimonials = () => {
           <div className="absolute left-0 bottom-[-4px] w-full h-1 bg-gradient-to-r from-blue-500 to-purple-500 rounded-b-lg"></div>
         </div>
 
-        <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+        <p className="mt-6 text-2xl leading-8 font-extrabold text-subHeading tracking-tight sm:text-4xl">
           Ce que disent nos clients
         </p>
       </div>

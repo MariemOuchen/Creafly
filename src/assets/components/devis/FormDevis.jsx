@@ -7,7 +7,7 @@ const variants = {
   hover: { scale: 1.05, transition: { duration: 0.3 } },
 };
 
-export function Team() {
+export function FormDevis() {
   const items = [
     {
       icon: "./src/assets/images/phone.png",
@@ -38,9 +38,9 @@ export function Team() {
   ];
 
   return (
-    <div className="bg-bg min-h-screen p-8">
+    <div className="bg-bg p-8">
       <div className="px-4 md:px-0 mt-4 ml-6 mr-6">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {items.map((item, index) => (
             <motion.div
               key={index}
@@ -71,4 +71,4 @@ export function Team() {
   );
 }
 
-export default Team;
+export default FormDevis;

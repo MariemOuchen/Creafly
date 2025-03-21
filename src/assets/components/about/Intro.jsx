@@ -6,18 +6,18 @@ const Intro = () => {
                <section className="mx-auto max-w-7xl px-5 py-16 md:px-10 md:py-20 overflow-hidden">
                     <div className="container">
                          <div className="text-center">
-                              <h2 className="text-3xl font-extrabold md:text-5xl text-mainHeading dark:text-darkMainHeading">Qui Sommes-nous?
-                              </h2>
+                              {/* <h2 className="text-3xl font-extrabold md:text-5xl text-mainHeading dark:text-darkMainHeading">Qui Sommes-nous?
+                              </h2> */}
 
                          </div>
-                         <div className="flex flex-wrap justify-center px-4 mt-8">
+                         <div className="flex flex-wrap justify-center px-4 ">
                               <div className="w-full ">
                                    <div className="mb-12 lg:mb-0">
-                                        <p className="mb-4 text-md font-normal text-dark text-para md:text-xl leading-relaxed x²">
+                                        <p className="mb-4 text-md font-normal text-dark text-para md:text-xl leading-relaxed x²  text-center">
                                              Chez CREAFLY, nous sommes une agence spécialisée en marketing digital et développement web, passionnée par l’innovation numérique. Nous accompagnons les entreprises dans leur transformation digitale, en leur proposant des solutions sur mesure qui allient performance, visibilité et créativité.
 
                                         </p>
-                                        <p className="mb-4 text-md font-normal text-dark text-para md:text-xl leading-relaxed x²">
+                                        <p className="mb-4 text-md font-normal text-dark text-para md:text-xl leading-relaxed x²  text-center">
                                              Grâce à notre expertise en stratégie digitale, nous aidons nos clients à optimiser leur présence en ligne avec des campagnes publicitaires efficaces, du référencement SEO avancé, ainsi que des sites web performants et ergonomiques.
 
                                         </p>
@@ -29,7 +29,7 @@ const Intro = () => {
 
 
                                         </div>
-                                        <p className="mb-4 text-md font-normal text-dark text-para md:text-xl leading-relaxed x²">
+                                        <p className="mb-4 text-md font-normal text-dark text-para md:text-xl leading-relaxed x²  text-center">
                                              Faites confiance à CREAFLY pour booster votre visibilité en ligne et accélérer votre croissance digitale !
 
                                         </p>

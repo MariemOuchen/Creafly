@@ -1,87 +1,59 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import Img7 from "../../images/vision.png";
-import Img8 from "../../images/mission.png";
-
-// Variants for reusable animations
-const fadeUp = {
-  hidden: { opacity: 0, y: 50 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
-};
-
-const slideLeft = {
-  hidden: { opacity: 0, x: -50 },
-  visible: { opacity: 1, x: 0, transition: { duration: 1, delay: 0.3 } },
-};
-
-const slideRight = {
-  hidden: { opacity: 0, x: 50 },
-  visible: { opacity: 1, x: 0, transition: { duration: 1, delay: 0.3 } },
-};
-
-const scaleIn = {
-  hidden: { opacity: 0, scale: 0.8 },
-  visible: { opacity: 1, scale: 1, transition: { duration: 1, delay: 0.5 } },
-};
+import React from "react";
 
 const Vision = () => {
-  return (
-    <div>
-      <section className="bg-bg dark:bg-darkBg">
-        {/* Vision Section */}
-        <motion.div
-          variants={fadeUp}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ amount: 0.2 }}
-          className="mx-auto max-w-7xl px-10 py-16 "
-        >
-          <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-2">
-            {/* Content Div */}
-            <motion.div variants={slideLeft} initial="hidden" whileInView="visible" viewport={{ amount: 0.2 }} className="max-w-[720px]">
-              <h3 className="text-3xl font-extrabold md:text-5xl text-mainHeading dark:text-darkMainHeading">
-                Notre Vision
-              </h3>
-              <p className="max-w-[600px] text-md font-normal text-dark mt-6 dark:text-darkPara text-para md:text-base">
-              Nous aspirons à devenir une référence incontournable en marketing digital et développement web, en offrant des services créatifs et efficaces qui s’adaptent aux besoins évolutifs des entreprises. Notre ambition est de proposer des solutions digitales complètes et innovantes, permettant à nos clients d’optimiser leur visibilité et d’accélérer leur croissance dans un monde numérique en constante évolution.
+    const features = [
+        {
+            title: "Notre Vision",
+            description:
+                "Nous aspirons à devenir une référence incontournable en marketing digital et développement web, en offrant des services créatifs et efficaces qui s’adaptent aux besoins évolutifs des entreprises. Notre ambition est de proposer des solutions digitales complètes et innovantes, permettant à nos clients d’optimiser leur visibilité et d’accélérer leur croissance dans un monde numérique en constante évolution.",
+            image:
+                "./src/assets/images/vision.png",
+            alt: "Illustration of a brain representing creativity",
+        },
+        {
+            title: "Notre Mission",
+            description:
+                "Chez CREAFLY, nous accompagnons les entreprises dans leur transformation digitale en proposant des solutions innovantes et performantes. Grâce à des stratégies marketing sur mesure, un développement web optimisé et des campagnes de communication impactantes, nous aidons nos clients à renforcer leur présence en ligne et à atteindre leurs objectifs de croissance.",
+            image:
+                "./src/assets/images/mission.png",
+            alt: "Illustration of a handshake representing reactivity",
+        },
+        {
+            title: "Notre Valeurs",
+            description:
+                "Chez CREAFLY, nous plaçons l'innovation, la créativité et l'excellence au cœur de notre approche. Nous croyons en une collaboration transparente et de confiance avec nos clients, en mettant leur succès au centre de nos actions. L'engagement, la réactivité et la recherche constante de performance guident notre travail, afin d'offrir des solutions digitales sur mesure, adaptées aux défis d’un monde en perpétuelle évolution.",
+            image:
+                "./src/assets/images/value.png",
+            alt: "Illustration of a puzzle piece representing engagement",
+        },
+    ];
 
-              </p>
-            </motion.div>
-            {/* Image Div */}
-            <motion.div variants={scaleIn} initial="hidden" whileInView="visible" viewport={{ amount: 0.2 }}>
-              <img src={Img7} className="rounded-md h-45 w-45" alt="Vision" />
-            </motion.div>
-          </div>
-        </motion.div>
-
-        {/* Mission Section */}
-        <motion.div
-          variants={fadeUp}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ amount: 0.2 }}
-          className="mx-auto max-w-7xl px-10 py-16"
-        >
-          <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-2">
-            {/* Image Div */}
-            <motion.div variants={scaleIn} initial="hidden" whileInView="visible" viewport={{ amount: 0.2 }}>
-              <img src={Img8} className="rounded-md h-45 w-45" alt="Mission" />
-            </motion.div>
-            {/* Content Div */}
-            <motion.div variants={slideRight} initial="hidden" whileInView="visible" viewport={{ amount: 0.2 }} className="max-w-[720px]">
-              <h3 className="text-3xl font-extrabold md:text-5xl text-mainHeading dark:text-darkMainHeading">
-                Notre Mission
-              </h3>
-              <p className="max-w-[600px] mb-4 text-md font-normal mt-6 text-dark dark:text-darkPara text-para md:text-base">
-              Chez CREAFLY, nous accompagnons les entreprises dans leur transformation digitale en proposant des solutions innovantes et performantes. Grâce à des stratégies marketing sur mesure, un développement web optimisé et des campagnes de communication impactantes, nous aidons nos clients à renforcer leur présence en ligne et à atteindre leurs objectifs de croissance.
-
-              </p>
-            </motion.div>
-          </div>
-        </motion.div>
-      </section>
-    </div>
-  );
+    return (
+        <section className="bg-bg text-center py-2 mb-10">
+            <div className="container mx-auto">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    {features.map((feature, index) => (
+                        <div
+                            key={index}
+                            className="p-6 shadow-lg rounded-2xl bg-white transform transition-transform duration-500 hover:scale-105 hover:shadow-2xl motion-safe:animate-fadeIn"
+                        >
+                            <div className="flex flex-col items-center">
+                                <img
+                                    src={feature.image}
+                                    alt={feature.alt}
+                                    className="w-24 h-24 mb-4"
+                                />
+                                <h2 className="text-2xl font-semibold text-gray-800 mb-4">
+                                    {feature.title}
+                                </h2>
+                                <p className="text-gray-600">{feature.description}</p>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            </div>
+        </section>
+    );
 };
 
 export default Vision;
